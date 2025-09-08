@@ -166,7 +166,7 @@ Want to learn how to expand this setup? [Visit my portfolio][animakit] to explor
 This repo is a work in progress. If you'd like to suggest or add improvements, fix bugs or typos etc., feel free to contribute. Check out the [contributing guidelines][contributing] to get started.
 
 
-[animakit]: http://github.com/anima-kit.github.io/
+[animakit]: http://anima-kit.github.io/
 [contributing]: CONTRIBUTING.md
 [docker]: https://www.docker.com/
 [langchain]: https://www.langchain.com/
@@ -174,11 +174,11 @@ This repo is a work in progress. If you'd like to suggest or add improvements, f
 [ollama]: https://ollama.com/
 [ollama-library]: https://ollama.com/library/
 [ollama-python]: https://github.com/ollama/ollama-python/
-[ollama-tutorial]: http://github.com/anima-kit.github.io/tutorials/servers/ollama/
+[ollama-tutorial]: http://anima-kit.github.io/tutorials/servers/ollama/
 [ollama-url]: http://localhost:11434/
 [python]: https://www.python.org/
 [qwen3:0.6b]: https://ollama.com/library/qwen3:0.6b
 [step-activate]: https://github.com/anima-kit/ollama-docker/blob/main/README.md#gs-activate
 [step-start]: https://github.com/anima-kit/ollama-docker/blob/main/README.md#gs-start
 [step-stop]: https://github.com/anima-kit/ollama-docker/blob/main/README.md#gs-stop
-[tutorials]: http://github.com/anima-kit.github.io/tutorials/
+[tutorials]: https://anima-kit.github.io/tutorials/
