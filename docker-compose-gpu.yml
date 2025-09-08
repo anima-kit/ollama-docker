@@ -1,0 +1,32 @@
+#### docker-compose-gpu
+### Sets up an Ollama server to handle LM calls with GPU acceleration through port `localhost:11434`
+
+## All Ollama model data is saved in the local folder `./ollama_data` by default
+## This is the exact same file as `docker-compose-cpu` but with Ollama configured for GPU support
+
+### Creating volumes 
+## Optional for Docker volume instead of local folder
+## If you want to store Ollama data in Docker instead of a local folder, uncomment two lines below and change volume definition in Ollama service 
+#volumes:
+#  ollama_data:    
+
+### Creating containers
+services:
+  ollama: ## Ollama container (GPU-enabled)
+    image: ollama/ollama
+    container_name: ollama
+    ports:  ## Allow external processes to access Ollama server here
+      - "127.0.0.1:11434:11434"       
+
+    ## Configure Ollama to use GPU
+    gpus: # Use all available GPUs
+      - device: all                                  
+
+    ## Can store Ollama data (LMs, etc.) in Docker volume or in folder on local system.    
+    ## Store Ollama data in local folder `./ollama_data`
+    volumes: # Store Ollama data in folder of parent directory                    
+      - ./ollama_data:/root/.ollama
+
+    ## To store Ollama data in a Docker volume instead, comment out the two volume creation lines above and use the two volume creation lines below
+    #volumes:  
+    #  - ollama_data:/root/.ollama
