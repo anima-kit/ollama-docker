@@ -149,7 +149,8 @@ Want to learn how to expand this setup? [Visit my portfolio][animakit] to explor
 ├── logger.py               # Python logger for tracking progress
 ├── ollama_test.py          # Python test of methods
 ├── ollama_utils.py         # Python methods to use Ollama server
-├── requirements.txt        # Required Python libraries
+├── requirements.txt        # Required Python libraries for main app
+├── requirements-dev.txt    # Required Python libraries for development
 ├── tests/                  # Testing suite
 │   └── test_integration.py # Integration tests for use with Ollama API
 └── └── test_unit.py        # Unit tests for Python methods
