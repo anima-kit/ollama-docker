@@ -1,5 +1,4 @@
-![GitHub Workflow Status](https://github.com/anima-kit/ollama-docker/actions/workflows/ci.yml/badge.svg?branch=main)  
-[![codecov](https://codecov.io/gh/anima-kit/ollama-docker/graph/badge.svg)](https://codecov.io/gh/anima-kit/ollama-docker)
+![GitHub Workflow Status](https://github.com/anima-kit/ollama-docker/actions/workflows/ci.yml/badge.svg?branch=main) [![codecov](https://codecov.io/gh/anima-kit/ollama-docker/graph/badge.svg)](https://codecov.io/gh/anima-kit/ollama-docker)
 
 # <img src="assets/ollama.svg" alt="Ollama" style="width: 32px; height: 32px; vertical-align: middle;"> <img src="assets/docker.svg" alt="Docker" style="width: 32px; height: 32px; vertical-align: middle;"> <img src="assets/python.svg" alt="Python" style="width: 32px; height: 32px; vertical-align: middle;">  Ollama Docker with Python
 
