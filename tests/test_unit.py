@@ -1,9 +1,5 @@
 ### tests/test_unit.py
-## Defines unit tests for methods in ./ollama_utils.py
-
-import sys
-import os
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+## Defines unit tests for methods in ./pyfiles.ollama_utils.py
 
 ## I'm learning how to create testing suites with this file, so lots of 
 ## (probably obvious for a seasoned developer) comments are included 
@@ -12,12 +8,12 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 ## For unit testing, we don't want to rely on real Ollama API calls, we just want 
 ## to test the logic of our code
 # Patch is used to define where mocks (fake functions, classes, clients, etc.) 
-# should replace the real thing in `ollama_utils.py`
+# should replace the real thing in `pyfiles.ollama_utils.py`
 # MagicMock is used to define the mocks that will replace the real things
 # Bottom most patch goes with inner most argument, then next patch goes to next argument, and so forth
 import unittest
 from unittest.mock import patch, MagicMock
-from ollama_utils import OllamaClient, lm_name, message
+from pyfiles.ollama_utils import OllamaClient, lm_name, message
 
 ## Define constants
 model_name = 'model-name'
@@ -103,7 +99,7 @@ class TestOllamaClientUnit(unittest.TestCase):
     Unit tests for `OllamaClient` class.
     
     This test suite contains unit tests for the `OllamaClient` class of 
-    `ollama_utils.py`, covering initialization, model management, response handling, 
+    `pyfiles.ollama_utils.py`, covering initialization, model management, response handling, 
     and utility methods.
 
     All tests use mocking to isolate the class under test from external dependencies.
@@ -111,8 +107,8 @@ class TestOllamaClientUnit(unittest.TestCase):
 
 
     ## Test successful client initialization
-    # Utilize patch to replace all Ollama Client calls in `ollama_utils.py` with mock
-    @patch('ollama_utils.Client')
+    # Utilize patch to replace all Ollama Client calls in `pyfiles.ollama_utils.py` with mock
+    @patch('pyfiles.ollama_utils.Client')
     def test_init_client_success(self, mock_client):
         """
         Test successful initialization of OllamaClient with a custom URL.
@@ -152,9 +148,9 @@ class TestOllamaClientUnit(unittest.TestCase):
 
 
     ## Test listing pulled models with models available
-    # Utilize patch to replace all ollama.list calls in `ollama_utils.py` with mock
-    @patch('ollama_utils.ollama.list')
-    @patch('ollama_utils.Client')
+    # Utilize patch to replace all ollama.list calls in `pyfiles.ollama_utils.py` with mock
+    @patch('pyfiles.ollama_utils.ollama.list')
+    @patch('pyfiles.ollama_utils.Client')
     # Bottom patch goes with inner most argument, then next patch goes to next argument, and so forth
     def test_list_pulled_models_success(self, mock_client, mock_list):
         """
@@ -198,8 +194,8 @@ class TestOllamaClientUnit(unittest.TestCase):
 
 
     ## Test listing models if Ollama not connected properly
-    @patch('ollama_utils.ollama.list')
-    @patch('ollama_utils.Client')
+    @patch('pyfiles.ollama_utils.ollama.list')
+    @patch('pyfiles.ollama_utils.Client')
     def test_list_models_error(self, mock_client, mock_list):
         """
         Test error handling when listing models fails due to Ollama connection error.
@@ -239,9 +235,9 @@ class TestOllamaClientUnit(unittest.TestCase):
 
 
     ## Test pulling LM from Ollama library
-    # Utilize patch to replace all ollama.pull calls in `ollama_utils.py` with mock
-    @patch('ollama_utils.ollama.pull')
-    @patch('ollama_utils.Client')
+    # Utilize patch to replace all ollama.pull calls in `pyfiles.ollama_utils.py` with mock
+    @patch('pyfiles.ollama_utils.ollama.pull')
+    @patch('pyfiles.ollama_utils.Client')
     def test_pull_lm_success(self, mock_client, mock_pull):
         """
         Test pulling of LM from Ollama library.
@@ -282,9 +278,9 @@ class TestOllamaClientUnit(unittest.TestCase):
 
 
     ## Test initializting LM when LM is available in Ollama data
-    @patch('ollama_utils.ollama.pull')
-    @patch('ollama_utils.ollama.list')
-    @patch('ollama_utils.Client')
+    @patch('pyfiles.ollama_utils.ollama.pull')
+    @patch('pyfiles.ollama_utils.ollama.list')
+    @patch('pyfiles.ollama_utils.Client')
     def test_init_lm_existing_model(self, mock_client, mock_list, mock_pull):
         """
         Test initialization of language model when the model already exists.
@@ -324,9 +320,9 @@ class TestOllamaClientUnit(unittest.TestCase):
 
 
     ## Test initializting LM when LM isn't available in Ollama data
-    @patch('ollama_utils.ollama.pull')
-    @patch('ollama_utils.ollama.list')
-    @patch('ollama_utils.Client')
+    @patch('pyfiles.ollama_utils.ollama.pull')
+    @patch('pyfiles.ollama_utils.ollama.list')
+    @patch('pyfiles.ollama_utils.Client')
     def test_init_lm_missing_model(self, mock_client, mock_list, mock_pull):
         """
         Test initialization of LM when the model does not exist.
@@ -367,9 +363,9 @@ class TestOllamaClientUnit(unittest.TestCase):
 
 
     ## Test successfully getting response
-    @patch('ollama_utils.ollama.pull')
-    @patch('ollama_utils.ollama.list')
-    @patch('ollama_utils.Client')
+    @patch('pyfiles.ollama_utils.ollama.pull')
+    @patch('pyfiles.ollama_utils.ollama.list')
+    @patch('pyfiles.ollama_utils.Client')
     def test_get_response_success(self, mock_client, mock_list, mock_pull):
         """
         Test successful retrieval of response from Ollama chat.
@@ -419,9 +415,9 @@ class TestOllamaClientUnit(unittest.TestCase):
 
 
     ## Test getting a None response
-    @patch('ollama_utils.ollama.pull')
-    @patch('ollama_utils.ollama.list')
-    @patch('ollama_utils.Client')
+    @patch('pyfiles.ollama_utils.ollama.pull')
+    @patch('pyfiles.ollama_utils.ollama.list')
+    @patch('pyfiles.ollama_utils.Client')
     def test_get_response_no_content(self, mock_client, mock_list, mock_pull):
         """
         Test error handling when response content is missing.
@@ -463,7 +459,7 @@ class TestOllamaClientUnit(unittest.TestCase):
 
 
     ## Test removing fully closed think tags
-    @patch('ollama_utils.Client')
+    @patch('pyfiles.ollama_utils.Client')
     def test_remove_think_tags_success(self, mock_client):
         """
         Test successful removal of think tags from text.
@@ -499,7 +495,7 @@ class TestOllamaClientUnit(unittest.TestCase):
 
 
     ## Test removing think tags with None input
-    @patch('ollama_utils.Client')
+    @patch('pyfiles.ollama_utils.Client')
     def test_remove_think_tags_none_input(self, mock_client):
         """
         Test error handling when input to _remove_think_tags is None.
@@ -533,7 +529,7 @@ class TestOllamaClientUnit(unittest.TestCase):
 
 
     ## Test removing think tags when only opening tag
-    @patch('ollama_utils.Client')
+    @patch('pyfiles.ollama_utils.Client')
     def test_remove_think_tags_only_opening(self, mock_client):
         """
         Test removal of think tags when only opening tag is present.
@@ -568,7 +564,7 @@ class TestOllamaClientUnit(unittest.TestCase):
 
 
     ## Test removing think tags when only closing tag
-    @patch('ollama_utils.Client')
+    @patch('pyfiles.ollama_utils.Client')
     def test_remove_think_tags_only_closing(self, mock_client):
         """
         Test removal of think tags when only closing tag is present.
@@ -603,7 +599,7 @@ class TestOllamaClientUnit(unittest.TestCase):
 
 
     ## Test removing think tags when multiple fully closed
-    @patch('ollama_utils.Client')
+    @patch('pyfiles.ollama_utils.Client')
     def test_remove_think_tags_multiple_closed(self, mock_client):
         """
         Test removal of think tags when multiple fully closed tags are present.
@@ -638,7 +634,7 @@ class TestOllamaClientUnit(unittest.TestCase):
 
 
     ## Test removing think tags when fully closed and one opening remaining
-    @patch('ollama_utils.Client')
+    @patch('pyfiles.ollama_utils.Client')
     def test_remove_think_tags_closed_and_opening(self, mock_client):
         """
         Test removal of think tags when fully closed tags and one opening tag are present.
@@ -673,7 +669,7 @@ class TestOllamaClientUnit(unittest.TestCase):
 
 
     ## Test removing think tags when fully closed and one closing remaining
-    @patch('ollama_utils.Client')
+    @patch('pyfiles.ollama_utils.Client')
     def test_remove_think_tags_closed_and_closing(self, mock_client):
         """
         Test removal of think tags when fully closed tags and one closing tag are present.

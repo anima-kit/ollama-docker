@@ -1,3 +1,6 @@
+![GitHub Workflow Status](https://github.com/anima-kit/ollama-docker/actions/workflows/ci.yml/badge.svg?branch=main)  
+[![codecov](https://codecov.io/gh/anima-kit/ollama-docker/graph/badge.svg)](https://codecov.io/gh/anima-kit/ollama-docker)
+
 # <img src="assets/ollama.svg" alt="Ollama" style="width: 32px; height: 32px; vertical-align: middle;"> <img src="assets/docker.svg" alt="Docker" style="width: 32px; height: 32px; vertical-align: middle;"> <img src="assets/python.svg" alt="Python" style="width: 32px; height: 32px; vertical-align: middle;">  Ollama Docker with Python
 
 ![image](assets/ollama-python-docker.png)
@@ -68,7 +71,7 @@ Now, let's get building!
 1.  Run the test script to ensure the default LM ([Qwen3 0.6B][qwen3:0.6b]) can be invoked:
 
     ```bash
-    python ollama_test.py
+    python -m scripts.ollama_test
     ```
 
     From the Docker setup, all Ollama data (including models) will be located in the local folder `./ollama_data/`. All logs will be stored in the `./ollama-docker.log` file.
@@ -106,7 +109,7 @@ For example, to chat with an LM through a custom script, follow these steps:
 
     ```python
     ## Import OllamaClient class
-    from ollama_utils import OllamaClient
+    from pyfiles.ollama_utils import OllamaClient
 
     ## Initialize client
     client = OllamaClient()
@@ -146,14 +149,13 @@ Want to learn how to expand this setup? [Visit my portfolio][animakit] to explor
 ```
 ├── docker-compose-cpu.yml  # Docker settings for CPU build of Ollama container
 ├── docker-compose-gpu.yml  # Docker settings for GPU build of Ollama container
-├── logger.py               # Python logger for tracking progress
-├── ollama_test.py          # Python test of methods
-├── ollama_utils.py         # Python methods to use Ollama server
+├── pyfiles/                # Python source code
+│   └── ollama_utils.py     # Python methods to use Ollama server
+│   └── logger.py           # Python logger for tracking progress
 ├── requirements.txt        # Required Python libraries for main app
 ├── requirements-dev.txt    # Required Python libraries for development
+├── scripts/                # Example scripts to use Python methods
 ├── tests/                  # Testing suite
-│   └── test_integration.py # Integration tests for use with Ollama API
-└── └── test_unit.py        # Unit tests for Python methods
 ```
 
 ## ⚙️ Tech 

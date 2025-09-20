@@ -1,0 +1,28 @@
+name: CI Tests & Coverage
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test_and_cover:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run tests & coverage
+        run: |
+          pip install -r requirements.txt -r requirements-dev.txt
+          docker compose -f docker-compose-cpu.yml up -d
+          coverage erase
+          coverage run -m pytest tests/ -v
+          coverage report -m
+          coverage xml
+          docker compose -f docker-compose-cpu.yml down
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          slug: anima-kit/ollama-docker

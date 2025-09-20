@@ -1,10 +1,6 @@
 ### tests/test_integration.py
 ## Defines integration tests for making sure methods in ./ollama_utils.py can be properly used with Ollama server
 
-import sys
-import os
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 ## I'm learning how to create testing suites with this file, so lots of 
 ## (probably obvious for a seasoned developer) comments are included 
 ## to clarify my confusion
@@ -25,7 +21,7 @@ import unittest
 import requests
 
 # Import your module
-from ollama_utils import OllamaClient, lm_name, url, message
+from pyfiles.ollama_utils import OllamaClient, lm_name, url, message
 
 
 class TestOllamaClientIntegration(unittest.TestCase):
