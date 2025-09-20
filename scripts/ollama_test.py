@@ -11,7 +11,7 @@
 from pyfiles.ollama_utils import OllamaClient
 from pyfiles.logger import logger
 
-logger.info(f'⚙️ Starting Ollama test in `./ollama_test.py`')
+logger.info(f'⚙️ Starting Ollama test in `./scripts/ollama_test.py`')
 
 ## Initialize Ollama client
 # Defaults to host on url 'http://localhost:11434'
@@ -22,4 +22,4 @@ client: OllamaClient = OllamaClient()
 # Defaults to send message 'Why is the sky blue?'
 client.get_response()
 
-logger.info(f'✅ Finished Ollama test in `./ollama_test.py` \n\n')
+logger.info(f'✅ Finished Ollama test in `./scripts/ollama_test.py` \n\n')
