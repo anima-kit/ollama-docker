@@ -16,7 +16,7 @@ from typing import (
     Pattern
 )
 
-from logger import (
+from pyfiles.logger import (
     logger,
     with_spinner
 )
@@ -107,7 +107,12 @@ class OllamaClient:
         try:
             # Create the client
             client = Client(host=self.url)
-            
+            # Don't actually need to pass url...can just do:
+            # How? Ollama uses _parse_host method in BaseClient class
+            # _parse_host(None) --> 'http://127.0.0.1:11434
+            # So url we setup is default url in Client()
+            #client = Client()
+
             # Test the connection with list and validate response
             response = client.list()
             

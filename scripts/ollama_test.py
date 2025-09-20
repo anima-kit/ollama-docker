@@ -8,8 +8,8 @@
 #       - Cleanup LM response (remove think tags and text within)
 #       - Output final response
 
-from ollama_utils import OllamaClient
-from logger import logger
+from pyfiles.ollama_utils import OllamaClient
+from pyfiles.logger import logger
 
 logger.info(f'⚙️ Starting Ollama test in `./ollama_test.py`')
 
