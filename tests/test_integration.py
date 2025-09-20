@@ -1,5 +1,5 @@
 ### tests/test_integration.py
-## Defines integration tests for making sure methods in ./ollama_utils.py can be properly used with Ollama server
+## Defines integration tests for making sure methods in ./pyfiles/ollama_utils.py can be properly used with Ollama server
 
 ## I'm learning how to create testing suites with this file, so lots of 
 ## (probably obvious for a seasoned developer) comments are included 
@@ -28,7 +28,7 @@ class TestOllamaClientIntegration(unittest.TestCase):
     """
     Integration tests for OllamaClient against a real Ollama server.
 
-    These tests ensure that the methods in `ollama_utils.py` work correctly when communicating 
+    These tests ensure that the methods in `pyfiles/ollama_utils.py` work correctly when communicating 
     with a running instance of the Ollama server. They verify basic functionality such as:
     
     - Client initialization

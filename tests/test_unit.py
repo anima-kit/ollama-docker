@@ -1,5 +1,5 @@
 ### tests/test_unit.py
-## Defines unit tests for methods in ./pyfiles.ollama_utils.py
+## Defines unit tests for methods in ./pyfiles/ollama_utils.py
 
 ## I'm learning how to create testing suites with this file, so lots of 
 ## (probably obvious for a seasoned developer) comments are included 
@@ -8,7 +8,7 @@
 ## For unit testing, we don't want to rely on real Ollama API calls, we just want 
 ## to test the logic of our code
 # Patch is used to define where mocks (fake functions, classes, clients, etc.) 
-# should replace the real thing in `pyfiles.ollama_utils.py`
+# should replace the real thing in `./pyfiles/ollama_utils.py`
 # MagicMock is used to define the mocks that will replace the real things
 # Bottom most patch goes with inner most argument, then next patch goes to next argument, and so forth
 import unittest
