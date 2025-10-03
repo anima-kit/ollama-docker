@@ -1,11 +1,11 @@
 ![GitHub Workflow Status](https://github.com/anima-kit/ollama-docker/actions/workflows/ci.yml/badge.svg?branch=main) [![codecov](https://codecov.io/gh/anima-kit/ollama-docker/graph/badge.svg)](https://codecov.io/gh/anima-kit/ollama-docker)
 
-# <img src="assets/ollama.svg" alt="Ollama" style="width: 32px; height: 32px; vertical-align: middle;"> <img src="assets/docker.svg" alt="Docker" style="width: 32px; height: 32px; vertical-align: middle;"> <img src="assets/python.svg" alt="Python" style="width: 32px; height: 32px; vertical-align: middle;">  Ollama Docker with Python
+# <img src="https://anima-kit.github.io/ollama-docker/assets/ollama.svg" alt="Ollama" style="width: 32px; height: 32px; vertical-align: middle;"> <img src="https://anima-kit.github.io/ollama-docker/assets/docker.svg" alt="Docker" style="width: 32px; height: 32px; vertical-align: middle;"> <img src="https://anima-kit.github.io/ollama-docker/assets/python.svg" alt="Python" style="width: 32px; height: 32px; vertical-align: middle;">  Ollama Docker with Python
 
-![image](assets/ollama-python-docker.png)
+![image](https://anima-kit.github.io/ollama-docker/assets/ollama-python-docker.png)
 
 <p align="center">
-  <img src="assets/ollama-docker-intro.gif" alt="animated"/>
+  <img src="https://anima-kit.github.io/ollama-docker/assets/ollama-docker-intro.gif" alt="animated"/>
 </p>
 
 ## 🔖 About This Project 
