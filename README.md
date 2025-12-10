@@ -2,6 +2,10 @@
 
 # <img src="https://anima-kit.github.io/ollama-docker/assets/ollama.svg" alt="Ollama" style="width: 32px; height: 32px; vertical-align: middle;"> <img src="https://anima-kit.github.io/ollama-docker/assets/docker.svg" alt="Docker" style="width: 32px; height: 32px; vertical-align: middle;"> <img src="https://anima-kit.github.io/ollama-docker/assets/python.svg" alt="Python" style="width: 32px; height: 32px; vertical-align: middle;">  Ollama Docker with Python
 
+This project was a way for me to learn how to create and utilize containers in Docker for building AI systems. There's no roadmap for future features, and won't be maintained.
+
+You can [checkout tutorials here][tutorials] for concepts pertaining to building AI systems.
+
 ![image](https://anima-kit.github.io/ollama-docker/assets/ollama-python-docker.png)
 
 <p align="center">
